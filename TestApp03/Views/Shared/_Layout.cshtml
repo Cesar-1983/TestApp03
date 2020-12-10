@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Test</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/FontAwesome")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
+                <li>@Html.ActionLink("Proveedores", "Index", "Proveedor")</li>
+                <li>@Html.ActionLink("Medidas", "Index", "Medida")</li>
+                <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+                <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" aria-label="Menú">
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                </a>
+                            </a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <div class="btn-group open">
+                                    <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+                                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                                        <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                                        <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-unlock"></i> Make admin</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@ViewBag.TituloViewPanel</div>
+                            <div class="panel-body">@RenderBody()</div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/App")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

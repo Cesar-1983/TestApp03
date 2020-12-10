@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EML.Medida>
+
+@{
+    ViewBag.Title = "Catalogo de Medidas";
+}
+
+
+<p>
+    @Html.ActionLink("Crear Medida", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionLarga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionLarga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.MedidaId }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.MedidaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MedidaId })*@
+        </td>
+    </tr>
+}
+
+</table>
